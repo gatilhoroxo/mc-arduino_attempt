@@ -1,114 +1,132 @@
-/* Tema dark blue clean para GitHub Pages (Cayman base) */
+:root {
+    --bg: #0f172a;
+    --bg-light: #1e293b;
+    --text: #e2e8f0;
+    --accent: #38bdf8;
+    --link-hover: #0ea5e9;
+    --border: #334155;
+    --table-header-bg: #1f2833;
+    --table-header-text: #f1f1f1;
+    --table-row-even: #0b0c10;
+    --table-row-odd: #1c1f24;
+    --table-hover-bg: #323841;
+}
+
+[data-theme="light"] {
+    --bg: #f8fafc;
+    --bg-light: #e2e8f0;
+    --text: #1e293b;
+    --accent: #0284c7;
+    --link-hover: #0369a1;
+    --border: #cbd5e1;
+    --table-header-bg: #1f2833;
+    --table-header-text: #f1f1f1;
+    --table-row-even: #0b0c10;
+    --table-row-odd: #1c1f24;
+    --table-hover-bg: #323841;
+}
+
 body {
-  background-color: #0e1a24; /* azul bem escuro, quase preto */
-  color: #e4e8ef; /* texto suave e legível */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  line-height: 1.6;
-  margin: 100;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Roboto, sans-serif;
+    margin: 30;
+    padding: 0;
+    line-height: 1.6;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Cabeçalhos */
-h1, h2, h3 {
-  color: #4da3ff;
-  border-bottom: 2px solid #1b3a57;
-  padding-bottom: 4px;
+header {
+    background-color: var(--bg-light);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
 }
 
-/* Links */
-a {
-  color: #63b3ff;
-  text-decoration: none;
+h1, h2 {
+    color: var(--accent);
 }
 
-a:hover {
-  text-decoration: underline;
-  color: #9dd1ff;
+nav a {
+    color: var(--accent);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
-/* Caixa do conteúdo principal */
-.page-content {
-  background-color: #15283a;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
-  padding: 24px;
-  margin: 40px auto;
-  max-width: 900px;
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 1rem;
 }
 
-/* Cabeçalho superior */
-.site-header {
-  background-color: #004b8d;
-  color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+#theme-toggle:hover {
+    background: var(--accent);
+    color: var(--bg);
 }
 
-.site-title, .site-title:visited {
-  color: white;
+main {
+    padding: 2rem;
+    animation: fadeIn 0.6s ease-in-out;
 }
 
-/* Navegação */
-.navbar {
-  background-color: #1a2f44;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  margin-bottom: 20px;
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border);
 }
 
-.navbar a {
-  margin: 0 12px;
-  font-weight: 600;
-  color: #88c6ff;
+.component-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 1rem;
+    margin: 1.5rem 0;
 }
 
-.navbar a:hover {
-  color: #b6e1ff;
+.component-table thead {
+    background: var(--table-header-bg);
+    color: var(--table-header-text);
+    font-weight: bold;
 }
 
-/* Blocos de código e inline code */
-code {
-  background-color: #102030;
-  color: #9fd3ff;
-  padding: 2px 5px;
-  border-radius: 5px;
-  font-family: "Fira Code", "Courier New", monospace;
-  font-size: 0.95em;
+.component-table th, 
+.component-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
 }
 
-/* Bloco de código em múltiplas linhas */
-pre {
-  background-color: #0d1826;
-  color: #c8e1ff;
-  padding: 16px;
-  border-radius: 10px;
-  overflow-x: auto;
-  border: 1px solid #1e3a5f;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+.component-table tbody tr:nth-child(even) {
+    background: var(--table-row-even);
 }
 
-pre code {
-  background: none;
-  color: inherit;
-  font-size: 0.9em;
+.component-table tbody tr:nth-child(odd) {
+    background: var(--table-row-odd);
 }
 
-/* Tabelas e divisores */
-hr {
-  border: 0;
-  border-top: 1px solid #2b4a6b;
+.component-table tbody tr:hover {
+    background: var(--table-hover-bg);
+    transition: background 0.3s ease;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 20px 0;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-th, td {
-  border: 1px solid #2b4a6b;
-  padding: 8px 12px;
-}
-
-th {
-  background-color: #18324a;
+@media (max-width: 700px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }

@@ -1,18 +1,8 @@
-title: "Docs of Arduino"
-description: "..."
+title: Projetos Arduino
 theme: jekyll-theme-cayman
-
-# url: "https://gatilhoroxo.github.io"
-# baseurl: "/mc-arduino_attempt"
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-
-include:
-  - assets/css
-
-# Customização visual via CSS
+description: Projetos e anotações sobre Arduino
 markdown: kramdown
-kramdown:
-  input: GFM
+exclude:
+  - node_modules
+  - package.json
+  - tsconfig.json
